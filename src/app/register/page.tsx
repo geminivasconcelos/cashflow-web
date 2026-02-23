@@ -12,7 +12,12 @@ export default function RegisterPage() {
 			<div className={styles.shell}>
 				<section className={styles.illustration}>
 					<div className={styles.illustrationGlow} aria-hidden="true" />
-					<Illustration />
+				
+					 <img
+            src="/cashflow.png"
+            alt="Login illustration"
+            className={styles.imgCashflow}
+          />
 				</section>
 
 				<section className={styles.formSection}>
@@ -50,9 +55,12 @@ export default function RegisterPage() {
 							/>
 						</label>
 
+		<div className={styles.containerButton}>	
+
 						<button type="submit" className={styles.primaryButton}>
 							Sign up
 						</button>
+		</div>
 					</form>
 
 					<p className={styles.footerText}>

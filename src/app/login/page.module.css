@@ -12,7 +12,7 @@
   align-items: center;
   justify-content: center;
   padding: 0;
-  font-family: var(--font-geist-sans);
+ 
 
   /* Fundo externo suave */
   background: radial-gradient(circle at 15% 20%, #f4e9ff 0%, #e7edff 38%, #fdf7ff 100%);
@@ -27,7 +27,10 @@
   display: grid;
   grid-template-columns: minmax(340px, 1.1fr) minmax(320px, 0.9fr);
   overflow: hidden;
-
+  align-items: center;
+  justify-content: space-around;
+  padding-left:2rem;
+  padding-right:2rem;
   /* 🔥 Gradiente contínuo do azul para branco */
   background: linear-gradient(
     140deg,
@@ -65,17 +68,33 @@
   z-index: 1;
 }
 
+
+.imgCashflow {
+  width: 55%;
+  height: 26%;
+  object-fit: contain;
+  display: block;
+}
+
 .formSection {
   padding: 48px 40px;
   display: flex;
   flex-direction: column;
-  gap: 28px;
+  gap: 58px;
+
+  align-items: center;
+  justify-content: center;
+}
+.header{
+  width: 70%;
 }
 
 .header p {
   color: var(--muted);
   font-size: 16px;
   margin-bottom: 6px;
+
+  align-self: flex-start;
 }
 
 .header h1 {
@@ -87,6 +106,7 @@
 .form {
   display: grid;
   gap: 18px;
+  width: 65%;
 }
 
 .field {
@@ -127,6 +147,7 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
+  margin-left: .7rem;
 }
 
 .checkbox input {
@@ -145,6 +166,11 @@
   font-size: 13px;
   text-decoration: none;
 }
+.containerButton{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
 
 .primaryButton {
   border: none;
@@ -153,10 +179,13 @@
   height: 48px;
   border-radius: 12px;
   font-size: 15px;
-  font-weight: 600;
+  font-weight: 500;
   cursor: pointer;
   transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
-  box-shadow: 0 16px 28px rgba(90, 70, 246, 0.25);
+  margin-top: 2rem;
+  width: 50%;
+
+
 }
 
 .primaryButton:hover {
