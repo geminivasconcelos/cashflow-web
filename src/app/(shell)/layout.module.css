@@ -1,10 +1,14 @@
 .appShell {
   display: grid;
   grid-template-columns: 240px 1fr;
-  min-height: 100vh;
+  height: 100vh;
   background: #f5f6fb;
   color: #1f1f2e;
   font-family: var(--font-geist-sans, "Inter", sans-serif);
+}
+
+.appShellCollapsed {
+  grid-template-columns: 76px 1fr;
 }
 
 .sidebar {
@@ -14,6 +18,10 @@
   flex-direction: column;
   gap: 18px;
   border-right: 1px solid #e4e7f2;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow: hidden;
 }
 
 .brand {
@@ -44,6 +52,7 @@
   display: inline-flex;
   align-items: center;
   text-decoration: none;
+  gap: 10px;
 }
 
 .menuItem:hover {
@@ -62,14 +71,22 @@
 }
 
 .content {
-  padding: 28px 28px 36px;
+  padding: 0;
   min-height: 100vh;
   background: #f5f6fb;
+  overflow: hidden;
+}
+
+.contentInner {
+  height: 100%;
+  overflow: auto;
+  padding: 28px 28px 36px;
 }
 
 @media (max-width: 1024px) {
   .appShell {
     grid-template-columns: 1fr;
+    height: auto;
   }
 
   .sidebar {
@@ -77,6 +94,8 @@
     align-items: center;
     gap: 10px;
     overflow-x: auto;
+    height: auto;
+    position: static;
   }
 
   .menu,
@@ -86,6 +105,56 @@
   }
 
   .content {
-    padding: 20px;
+    padding: 0;
   }
+
+  .contentInner {
+    padding: 20px;
+    height: auto;
+  }
+}
+
+.sidebarHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.collapseButton {
+  width: 32px;
+  height: 32px;
+  border-radius: 10px;
+  border: 1px solid #dcdff3;
+  background: #fff;
+  color: #4a3ddf;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.sidebarCollapsed {
+  padding: 20px 12px;
+}
+
+.sidebarCollapsed .menuItem {
+  justify-content: center;
+  padding: 0 10px;
+}
+
+.menuInitial {
+  display: none;
+  font-weight: 800;
+  color: #3d3f63;
+}
+
+.menuText {
+  display: inline;
+}
+
+.sidebarCollapsed .menuInitial {
+  display: inline;
+}
+
+.sidebarCollapsed .menuText {
+  display: none;
 }

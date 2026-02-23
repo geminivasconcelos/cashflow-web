@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useMemo, useState } from "react";
 import styles from "./layout.module.css";
 
 const navPrimary = [
@@ -26,11 +27,26 @@ function isActive(pathname: string, href: string) {
 
 export default function ShellLayout({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
+  const [collapsed, setCollapsed] = useState(false);
+
+  const appShellClass = collapsed
+    ? `${styles.appShell} ${styles.appShellCollapsed}`
+    : styles.appShell;
 
   return (
-    <div className={styles.appShell}>
-      <aside className={styles.sidebar}>
-        <div className={styles.brand}>FinSet</div>
+    <div className={appShellClass}>
+      <aside className={`${styles.sidebar} ${collapsed ? styles.sidebarCollapsed : ""}`}>
+        <div className={styles.sidebarHeader}>
+          <div className={styles.brand}>{collapsed ? "F" : "FinSet"}</div>
+          <button
+            type="button"
+            className={styles.collapseButton}
+            onClick={() => setCollapsed((v) => !v)}
+            aria-label={collapsed ? "Expandir menu" : "Recolher menu"}
+          >
+            {collapsed ? "→" : "←"}
+          </button>
+        </div>
         <nav className={styles.menu} aria-label="Navegação principal">
           {navPrimary.map((item) => (
             <Link
@@ -38,7 +54,8 @@ export default function ShellLayout({ children }: { children: React.ReactNode })
               className={`${styles.menuItem} ${isActive(pathname, item.href) ? styles.menuItemActive : ""}`}
               href={item.href}
             >
-              <span>{item.label}</span>
+              <span className={styles.menuInitial}>{item.label.charAt(0)}</span>
+              <span className={styles.menuText}>{item.label}</span>
             </Link>
           ))}
         </nav>
@@ -46,12 +63,15 @@ export default function ShellLayout({ children }: { children: React.ReactNode })
         <nav className={styles.menuSecondary} aria-label="Navegação secundária">
           {navSecondary.map((item) => (
             <Link key={item.href} className={styles.menuItem} href={item.href}>
-              <span>{item.label}</span>
+              <span className={styles.menuInitial}>{item.label.charAt(0)}</span>
+              <span className={styles.menuText}>{item.label}</span>
             </Link>
           ))}
         </nav>
       </aside>
-      <main className={styles.content}>{children}</main>
+      <main className={styles.content}>
+        <div className={styles.contentInner}>{children}</div>
+      </main>
     </div>
   );
 }
