@@ -1,0 +1,91 @@
+.appShell {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  min-height: 100vh;
+  background: #f5f6fb;
+  color: #1f1f2e;
+  font-family: var(--font-geist-sans, "Inter", sans-serif);
+}
+
+.sidebar {
+  background: #f0effd;
+  padding: 28px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  border-right: 1px solid #e4e7f2;
+}
+
+.brand {
+  font-weight: 800;
+  font-size: 20px;
+  color: #4a3ddf;
+  margin-bottom: 8px;
+}
+
+.menu,
+.menuSecondary {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.menuItem {
+  height: 42px;
+  border: none;
+  border-radius: 12px;
+  background: transparent;
+  text-align: left;
+  padding: 0 14px;
+  font-weight: 600;
+  color: #3d3f63;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.menuItem:hover {
+  background: rgba(122, 140, 241, 0.15);
+  color: #4a3ddf;
+}
+
+.menuItemActive {
+  background: #7a8cf1;
+  color: #ffffff;
+  box-shadow: 0 10px 24px rgba(122, 140, 241, 0.25);
+}
+
+.menuSpacer {
+  flex: 1;
+}
+
+.content {
+  padding: 28px 28px 36px;
+  min-height: 100vh;
+  background: #f5f6fb;
+}
+
+@media (max-width: 1024px) {
+  .appShell {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar {
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    overflow-x: auto;
+  }
+
+  .menu,
+  .menuSecondary {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .content {
+    padding: 20px;
+  }
+}

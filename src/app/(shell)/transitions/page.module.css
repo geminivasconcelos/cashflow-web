@@ -1,0 +1,419 @@
+.page {
+	min-height: 100vh;
+	background: linear-gradient(135deg, #f6f7ff 0%, #eef1fb 100%);
+	padding: 36px 24px 48px;
+	font-family: var(--font-geist-sans, "Inter", sans-serif);
+}
+
+.shell {
+	max-width: 1180px;
+	margin: 0 auto;
+	display: flex;
+	flex-direction: column;
+	gap: 18px;
+}
+
+.header {
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-between;
+	gap: 16px;
+}
+
+.header h1 {
+	margin: 2px 0 4px;
+	font-size: 26px;
+	color: #1f1f2e;
+}
+
+.subtitle {
+	margin: 0;
+	color: #7c809b;
+}
+
+.eyebrow {
+	margin: 0;
+	text-transform: uppercase;
+	letter-spacing: 0.12em;
+	font-weight: 700;
+	color: #4a3ddf;
+	font-size: 12px;
+}
+
+.actions {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+}
+
+.search {
+	width: 220px;
+	height: 40px;
+	border-radius: 12px;
+	border: 1px solid #dcdff3;
+	padding: 0 12px;
+	background: #ffffff;
+	color: #1f1f2e;
+}
+
+.primaryButton,
+.secondaryButton {
+	height: 40px;
+	border-radius: 12px;
+	padding: 0 14px;
+	font-weight: 700;
+	border: none;
+	cursor: pointer;
+}
+
+.primaryButton {
+	background: linear-gradient(135deg, #7a8cf1, #6c5cf5);
+	color: #ffffff;
+	box-shadow: 0 12px 24px rgba(108, 92, 245, 0.25);
+}
+
+.secondaryButton {
+	background: #ffffff;
+	border: 1px solid #dcdff3;
+	color: #4a3ddf;
+}
+
+.highlights {
+	display: grid;
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+	gap: 12px;
+}
+
+.highlightCard {
+	background: #ffffff;
+	border-radius: 16px;
+	padding: 16px;
+	border: 1px solid #eceef6;
+	box-shadow: 0 12px 24px rgba(79, 97, 163, 0.04);
+	display: grid;
+	gap: 8px;
+}
+
+.cardTop {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.cardLabel {
+	color: #7c809b;
+	font-weight: 700;
+	font-size: 13px;
+	margin: 0;
+}
+
+.cardValue {
+	font-size: 24px;
+	font-weight: 800;
+	color: #1f1f2e;
+}
+
+.badge,
+.badgeMuted {
+	border-radius: 999px;
+	padding: 4px 10px;
+	font-weight: 700;
+	font-size: 12px;
+}
+
+.badge {
+	background: #f2f4ff;
+	color: #4a3ddf;
+}
+
+.badgeMuted {
+	background: #f7f7fb;
+	color: #7c809b;
+}
+
+.filters {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 12px;
+	flex-wrap: wrap;
+}
+
+.filterGroup {
+	display: flex;
+	gap: 8px;
+	flex-wrap: wrap;
+}
+
+.pill {
+	border: 1px solid #dcdff3;
+	background: #ffffff;
+	color: #3d3f63;
+	border-radius: 999px;
+	padding: 8px 14px;
+	font-weight: 700;
+	cursor: pointer;
+}
+
+.pillActive {
+	background: #7a8cf1;
+	color: #ffffff;
+	border-color: #7a8cf1;
+	box-shadow: 0 10px 18px rgba(122, 140, 241, 0.25);
+}
+
+.switches {
+	display: flex;
+	gap: 12px;
+	flex-wrap: wrap;
+	color: #3d3f63;
+	font-weight: 600;
+}
+
+.switchLabel {
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+}
+
+.grid {
+	display: grid;
+	grid-template-columns: 1.8fr 1fr;
+	gap: 14px;
+}
+
+.card {
+	background: #ffffff;
+	border-radius: 16px;
+	border: 1px solid #eceef6;
+	padding: 16px;
+	display: grid;
+	gap: 12px;
+}
+
+.cardHeader {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 10px;
+}
+
+.cardHeader h2 {
+	margin: 2px 0 0;
+	font-size: 18px;
+	color: #1f1f2e;
+}
+
+.tableLegend {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	color: #7c809b;
+	font-weight: 700;
+}
+
+.table {
+	display: grid;
+	gap: 10px;
+}
+
+.tableHead,
+.tableRow {
+	display: grid;
+	grid-template-columns: 0.9fr 1.2fr 1fr 1fr 0.8fr 0.8fr;
+	align-items: center;
+	gap: 8px;
+	font-size: 13px;
+}
+
+.tableHead {
+	color: #7c809b;
+	font-weight: 700;
+}
+
+.tableRow {
+	background: #f9f9ff;
+	border: 1px solid #eceef6;
+	border-radius: 12px;
+	padding: 12px 14px;
+}
+
+.txName {
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+	font-weight: 700;
+	color: #1f1f2e;
+}
+
+.txDot {
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+	display: inline-block;
+}
+
+.muted {
+	color: #7c809b;
+}
+
+.chip {
+	background: #eef0ff;
+	color: #4a3ddf;
+	padding: 6px 10px;
+	border-radius: 12px;
+	font-weight: 700;
+	width: fit-content;
+}
+
+.amount {
+	font-weight: 800;
+	text-align: right;
+}
+
+.amountIn {
+	color: #2ea97a;
+}
+
+.amountOut {
+	color: #e55c74;
+}
+
+.alignEnd {
+	text-align: right;
+}
+
+.stack {
+	display: grid;
+	gap: 12px;
+}
+
+.timeline {
+	display: grid;
+	gap: 14px;
+	position: relative;
+}
+
+.timelineItem {
+	display: grid;
+	grid-template-columns: auto 1fr;
+	gap: 12px;
+	position: relative;
+}
+
+.timelineBullet {
+	width: 12px;
+	height: 12px;
+	border-radius: 50%;
+	background: #7a8cf1;
+	margin-top: 4px;
+}
+
+.timelineLine {
+	position: absolute;
+	left: 5px;
+	top: 16px;
+	width: 2px;
+	height: calc(100% - 16px);
+	background: linear-gradient(180deg, rgba(122, 140, 241, 0.7), rgba(122, 140, 241, 0));
+}
+
+.timelineContent {
+	background: #f9f9ff;
+	border: 1px solid #eceef6;
+	border-radius: 12px;
+	padding: 10px 12px;
+	display: grid;
+	gap: 6px;
+}
+
+.timelineTop {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	font-weight: 700;
+	color: #1f1f2e;
+}
+
+.alerts {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	display: grid;
+	gap: 10px;
+}
+
+.alerts li {
+	display: grid;
+	grid-template-columns: auto 1fr auto;
+	align-items: center;
+	gap: 10px;
+	padding: 10px 12px;
+	background: #f9f9ff;
+	border-radius: 12px;
+	border: 1px solid #eceef6;
+	color: #1f1f2e;
+}
+
+.dot {
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+	display: inline-block;
+}
+
+.linkButton {
+	background: transparent;
+	border: none;
+	color: #4a3ddf;
+	font-weight: 700;
+	cursor: pointer;
+}
+
+@media (max-width: 1080px) {
+	.grid {
+		grid-template-columns: 1fr;
+	}
+}
+
+@media (max-width: 720px) {
+	.page {
+		padding: 24px 16px 36px;
+	}
+
+	.header {
+		flex-direction: column;
+	}
+
+	.actions {
+		width: 100%;
+		flex-wrap: wrap;
+	}
+
+	.search {
+		flex: 1;
+		min-width: 220px;
+	}
+
+	.highlights {
+		grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+	}
+
+	.tableHead,
+	.tableRow {
+		grid-template-columns: 1fr;
+	}
+
+	.tableRow {
+		gap: 6px;
+	}
+
+	.alignEnd,
+	.amount {
+		text-align: left;
+	}
+
+	.alerts li {
+		grid-template-columns: 1fr;
+	}
+}
