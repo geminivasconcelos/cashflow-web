@@ -37,7 +37,7 @@
   justify-content: center;
   width: 42px;
   height: 42px;
-  font-size: 22px;
+  font-size: 20px;
   margin-bottom: 0;
   padding: 0;
 }
@@ -135,20 +135,24 @@
 .sidebarHeader {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 8px;
+  justify-content: flex-start;
+  gap: 0;
 }
 
 .collapseButton {
-  width: 15px;
+  width: 32px;
   height: 32px;
   border-radius: 10px;
-  border: none ;
-  background: transparent;
+  border: 1px solid #dcdff3;
+  background: #fff;
   color: #4a3ddf;
   font-weight: 700;
   cursor: pointer;
-  margin-top: 100px;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+  align-self: center;
 }
 
 .sidebarCollapsed {
@@ -176,4 +180,27 @@
 
 .sidebarCollapsed .menuText {
   display: none;
+}
+
+.sidebarCollapsed .sidebarHeader {
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0;
+  height: 76px;
+}
+
+.sidebarCollapsed .brandCollapsed {
+  margin-bottom: 0;
+  margin-top: 0;
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sidebarCollapsed .collapseButton {
+  margin-top: 0;
+  margin-bottom: 0;
 }
