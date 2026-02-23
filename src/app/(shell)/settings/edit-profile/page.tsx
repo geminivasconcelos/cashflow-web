@@ -1,8 +1,7 @@
-
-
 "use client";
 import styles from "./edit-profile.module.css";
 import { useState } from "react";
+import Link from "next/link";
 
 const user = {
   firstName: "Gemini",
@@ -18,6 +17,9 @@ export default function EditProfilePage() {
   return (
     <div className={styles.pageFull}>
       <header className={styles.header}>
+        <Link href="/settings" className={styles.backButton}>
+          ← Voltar para Settings
+        </Link>
         <h1>Account</h1>
       </header>
 
@@ -38,37 +40,28 @@ export default function EditProfilePage() {
         <section className={styles.section}>
           <div className={styles.inputRow}>
             <div className={styles.inputGroup}>
-              <label htmlFor="firstName">First Name</label>
-              <input id="firstName" name="firstName" type="text" defaultValue={user.firstName} />
+              <label>First Name</label>
+              <input type="text" value={user.firstName} readOnly />
             </div>
             <div className={styles.inputGroup}>
-              <label htmlFor="lastName">Last Name</label>
-              <input id="lastName" name="lastName" type="text" defaultValue={user.lastName} />
+              <label>Last Name</label>
+              <input type="text" value={user.lastName} readOnly />
             </div>
           </div>
-          <div className={styles.inputRow}>
-            <div className={styles.inputGroup} style={{ flex: 2 }}>
-              <label htmlFor="email">Email</label>
-              <input id="email" name="email" type="email" defaultValue={user.email} disabled={!emailEdit} />
-              <div className={styles.inputHelp}>Used to log in to your account</div>
-            </div>
-            <button
-              className={styles.editEmailButton}
-              type="button"
-              onClick={() => setEmailEdit((v) => !v)}
-            >
-              {emailEdit ? "Save Email" : "Edit Email"}
+          <div className={styles.inputGroup}>
+            <label>Email</label>
+            <input type="email" value={user.email} readOnly={!emailEdit} />
+            <button className={styles.editEmailButton} type="button" onClick={() => setEmailEdit(!emailEdit)}>
+              {emailEdit ? "Save" : "Edit Email"}
             </button>
+            <div className={styles.inputHelp}>You can update your email address.</div>
           </div>
         </section>
 
         {/* Password Section */}
         <section className={styles.sectionPassword}>
           <div className={styles.passwordBlock}>
-            <div>
-              <div className={styles.passwordLabel}>Password</div>
-              <div className={styles.inputHelp}>Log in with your password instead of using temporary login codes</div>
-            </div>
+            <span className={styles.passwordLabel}>Password</span>
             <button className={styles.changePasswordButton} type="button">Change Password</button>
           </div>
         </section>

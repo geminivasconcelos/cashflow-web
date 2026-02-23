@@ -31,6 +31,24 @@
   margin-bottom: 8px;
 }
 
+.brandCollapsed {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  font-size: 22px;
+  margin-bottom: 0;
+  padding: 0;
+}
+
+.brandInitial {
+  font-weight: 800;
+  color: #4a3ddf;
+  font-size: 22px;
+  display: inline-block;
+}
+
 .menu,
 .menuSecondary {
   display: flex;
@@ -122,14 +140,15 @@
 }
 
 .collapseButton {
-  width: 32px;
+  width: 15px;
   height: 32px;
   border-radius: 10px;
-  border: 1px solid #dcdff3;
-  background: #fff;
+  border: none ;
+  background: transparent;
   color: #4a3ddf;
   font-weight: 700;
   cursor: pointer;
+  margin-top: 100px;
 }
 
 .sidebarCollapsed {
