@@ -356,3 +356,23 @@
     grid-template-columns: 1fr;
   }
 }
+
+
+.imgUser {
+  width: 5%;
+  height: 26%;
+  object-fit: contain;
+  display: block;
+}
+
+.headerActionsMobile{
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  justify-content: flex-end;
+}
+
+.notificationButton{
+  background: none;
+  border: none;
+}
