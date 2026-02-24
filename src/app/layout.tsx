@@ -1,3 +1,4 @@
+import "./globals.css";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 
@@ -24,6 +25,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
+        <link
+          href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+          rel="stylesheet"
+        />
         {children}
       </body>
     </html>
