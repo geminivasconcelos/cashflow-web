@@ -36,10 +36,17 @@ export default function ShellLayout({ children }: { children: React.ReactNode })
   return (
     <div className={appShellClass}>
       <aside className={`${styles.sidebar} ${collapsed ? styles.sidebarCollapsed : ""}`}>
+<div>
+          <h1>Welcome back, Adaline!</h1>
+          <p>It is the best time to manage your finances</p>
+        </div>
+
         <div className={styles.sidebarHeader}>
           <div className={styles.brand + (collapsed ? ' ' + styles.brandCollapsed : '')}>
             {collapsed ? <span className={styles.brandInitial}>CF</span> : "CashFlow"}
           </div>
+
+
           <button
             type="button"
             className={styles.collapseButton}
