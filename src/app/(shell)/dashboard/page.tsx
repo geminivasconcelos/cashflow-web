@@ -87,17 +87,6 @@ export default function DashboardPage() {
           <h1>Dashboard</h1>
           {/* <p>It is the best time to manage your finances</p> */}
         </div>
-
-        <div className={styles.headerActionsMobile}>
-          <button className={styles.notificationButton} type="button">
-            <span className="material-symbols-outlined">notifications</span>
-          </button>
-
-          <button className={styles.notificationButton} type="button">
-            <span className="material-symbols-outlined">settings</span>
-          </button>
-          <img src="/cashflow.png" alt="" className={styles.imgUser} />
-        </div>
       </header>
 
       <section>

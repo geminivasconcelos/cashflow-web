@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useMemo, useState } from "react";
 import styles from "./layout.module.css";
+import HeaderActionsMobile from "./HeaderActionsMobile";
 
 const navPrimary = [
   { href: "/dashboard", label: "Dashboard" },
@@ -79,6 +80,7 @@ export default function ShellLayout({ children }: { children: React.ReactNode })
         </nav>
       </aside>
       <main className={styles.content}>
+        <HeaderActionsMobile />
         <div className={styles.contentInner}>{children}</div>
       </main>
     </div>
