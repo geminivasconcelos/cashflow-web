@@ -1,10 +1,14 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
 
 :root {
   --background: #ffffff;
   --foreground: #171717;
   --font-nunito: 'Nunito', sans-serif;
+  --font-plus: 'Inter Variable', 'Plus Jakarta Sans', 'Montserrat';
+  --font-inter: 'Inter Variable', 'Plus Jakarta Sans', 'Montserrat';
+  --font-montserrat: 'Montserrat', 'Plus Jakarta Sans', 'Inter Variable';
 }
 
 @media (prefers-color-scheme: dark) {
@@ -23,7 +27,7 @@ body {
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: "Nunito", sans-serif;
+  font-family: var(--font-plus), var(--font-inter), var(--font-montserrat);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
