@@ -1,10 +1,11 @@
-'use client';
+"use client";
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useMemo, useState } from "react";
 import styles from "./layout.module.css";
-import HeaderActionsMobile from "./HeaderActionsMobile";
+// import HeaderActionsMobile from "./HeaderActionsMobile";
+import Image from "next/image";
 
 const navPrimary = [
   { href: "/dashboard", label: "Dashboard" },
@@ -26,61 +27,51 @@ function isActive(pathname: string, href: string) {
   return pathname === href || pathname.startsWith(`${href}/`);
 }
 
-export default function ShellLayout({ children }: { children: React.ReactNode }) {
+export default function ShellLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   const pathname = usePathname();
-  const [collapsed, setCollapsed] = useState(false);
-
-  const appShellClass = collapsed
-    ? `${styles.appShell} ${styles.appShellCollapsed}`
-    : styles.appShell;
-
   return (
-    <div className={appShellClass}>
-      <aside className={`${styles.sidebar} ${collapsed ? styles.sidebarCollapsed : ""}`}>
-<div>
-          <h1>Welcome back, Adaline!</h1>
-          <p>It is the best time to manage your finances</p>
+    <div className={styles.appShellTopNav}>
+      <header className={styles.topNavHeader}>
+        <div className={styles.topNavLeft}>
+          {/* <span className={styles.logoCircle}> */}
+          <img
+            className={styles.imgLogo}
+            src="/cashflow_sem_nome.png"
+            alt="Logo"
+          />
+          {/* </span> */}
+          <span className={styles.topNavBrand}>Cashflow</span>
         </div>
-
-        <div className={styles.sidebarHeader}>
-          <div className={styles.brand + (collapsed ? ' ' + styles.brandCollapsed : '')}>
-            {collapsed ? <span className={styles.brandInitial}>CF</span> : "CashFlow"}
-          </div>
-
-
-          <button
-            type="button"
-            className={styles.collapseButton}
-            onClick={() => setCollapsed((v) => !v)}
-            aria-label={collapsed ? "Expandir menu" : "Recolher menu"}
-          >
-            {collapsed ? "→" : "←"}
-          </button>
-        </div>
-        <nav className={styles.menu} aria-label="Navegação principal">
+        <nav className={styles.topNavMenu} aria-label="Navegação principal">
           {navPrimary.map((item) => (
             <Link
               key={item.href}
-              className={`${styles.menuItem} ${isActive(pathname, item.href) ? styles.menuItemActive : ""}`}
+              className={
+                isActive(pathname, item.href)
+                  ? styles.topNavMenuItemActive
+                  : styles.topNavMenuItem
+              }
               href={item.href}
             >
-              <span className={styles.menuInitial}>{item.label.charAt(0)}</span>
-              <span className={styles.menuText}>{item.label}</span>
+              {item.label}
             </Link>
           ))}
         </nav>
-        <div className={styles.menuSpacer} />
-        <nav className={styles.menuSecondary} aria-label="Navegação secundária">
-          {navSecondary.map((item) => (
-            <Link key={item.href} className={styles.menuItem} href={item.href}>
-              <span className={styles.menuInitial}>{item.label.charAt(0)}</span>
-              <span className={styles.menuText}>{item.label}</span>
-            </Link>
-          ))}
-        </nav>
-      </aside>
-      <main className={styles.content}>
-        <HeaderActionsMobile />
+        <div className={styles.topNavActions}>
+   
+          <span className="material-symbols-outlined">mode_night</span>
+          <span className="material-symbols-outlined">notifications</span>
+          <span className="material-symbols-outlined">settings</span>
+          <div className={styles.avatarCircle}>
+            <Image src="/avatar.png" alt="User" width={32} height={32} />
+          </div>
+        </div>
+      </header>
+      <main className={styles.contentTopNav}>
         <div className={styles.contentInner}>{children}</div>
       </main>
     </div>
