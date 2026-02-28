@@ -82,23 +82,27 @@ const savingGoals = [
 export default function DashboardPage() {
   return (
     <div className={styles.page}>
-      <header className={styles.header}>
-        <div>
-          <h1>Dashboard</h1>
-          {/* <p>It is the best time to manage your finances</p> */}
-        </div>
-      </header>
+      
 
       <section>
         <div className={styles.headerActions}>
+          <span className={styles.headerActionsPeriodSpan}>Período de Gastos</span>
+           <input
+            className={styles.inputOutilined}
+            type="date"
+            aria-label="Select month"
+          />
+          <span className={styles.headerActionsPeriodSpan}>até</span>
           <input
             className={styles.inputOutilined}
             type="date"
             aria-label="Select month"
           />
-          <button className={styles.primaryButton} type="button">
+          {/* <button className={styles.primaryButton} type="button">
             Add new widget
-          </button>
+          </button> */}
+
+          <button className={styles.primaryButton}>To look for</button>
         </div>
       </section>
 
@@ -106,7 +110,7 @@ export default function DashboardPage() {
         {summaryCards.map((card) => (
           <article key={card.label} className={styles.summaryCard}>
             <header>
-              <span>{card.label}</span>
+              <span className={styles.summaryLabel}>{card.label}</span>
               <span className={styles.iconCircle}>↗</span>
             </header>
             <div className={styles.summaryValue}>{card.value}</div>
@@ -126,10 +130,10 @@ export default function DashboardPage() {
           <header className={styles.cardHeader}>
             <div className={styles.cardTitle}>Money flow</div>
             <div className={styles.cardFilters}>
-              <span className={styles.pill}>Income</span>
-              <span className={styles.pillMuted}>Expense</span>
-              <span className={styles.filterTag}>All accounts</span>
-              <span className={styles.filterTag}>This year</span>
+              <button className={styles.buttonGridTwoCols}>Income</button>
+              <button className={styles.buttonGridTwoCols}>Expense</button>
+              <button className={styles.buttonGridTwoCols}>All accounts</button>
+              <button className={styles.buttonGridTwoCols}>This year</button>
             </div>
           </header>
           <div className={styles.chartBars}>

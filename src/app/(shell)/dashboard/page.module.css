@@ -4,7 +4,9 @@
   gap: 20px;
   padding: 0 4px 28px;
   color: #1f1f2e;
-  font-family: var(--font-geist-sans, "Inter", sans-serif);
+  width: 98%;
+  align-self: center;
+  justify-self: center;
 }
 
 .header {
@@ -28,7 +30,31 @@
 .headerActions {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 20px;
+  margin-left: 40px;
+  margin-top: 13px;
+}
+
+.headerActionsPeriodSpan {
+  font-weight: 300;
+  color: #7c809b;
+  font-size: 14px;
+}
+
+.inputOutilined {
+  height: 38px;
+  width: 200px;
+  padding: 0 14px;
+  border-radius: 12px;
+  border: 1px solid #dcdff3;
+  background: #ffffff;
+  color: #4a3ddf;
+
+  &:focus {
+    outline: none;
+    border-color: #7a8cf1;
+    box-shadow: 0 0 0 2px rgba(122, 140, 241, 0.25);
+  }
 }
 
 .outlineButton {
@@ -51,22 +77,38 @@
   color: #ffffff;
   font-weight: 700;
   cursor: pointer;
-  box-shadow: 0 12px 24px rgba(108, 92, 245, 0.25);
+
+  &:active {
+    box-shadow: 0 6px 12px rgba(108, 92, 245, 0.25);
+    transform: translateY(2px);
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 12px 24px rgba(108, 92, 245, 0.25);
+  }
+
+  &:hover {
+    outline: none;
+    box-shadow: 0 8px 20px rgba(108, 92, 245, 0.25);
+  }
 }
 
 .summaryGrid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 14px;
+
+  margin-top: 8px;
 }
 
 .summaryCard {
-  background: #ffffff;
   border-radius: 16px;
   padding: 16px 18px;
   display: grid;
   gap: 8px;
   border: 1px solid #eceef6;
+  background: #f8f8f8;
 }
 
 .summaryCard header {
@@ -92,6 +134,12 @@
   font-size: 22px;
   font-weight: 800;
   color: #1f1f2e;
+}
+
+.summaryLabel {
+  font-size: 13px;
+  color: #7c809b;
+  font-weight: 400;
 }
 
 .deltaPositive {
@@ -139,33 +187,29 @@
   flex-wrap: wrap;
 }
 
-.pill,
-.pillMuted {
+.buttonGridTwoCols {
   padding: 4px 10px;
   border-radius: 12px;
   font-weight: 700;
   font-size: 12px;
-}
-
-.pill {
-  background: #7a8cf1;
-  color: #ffffff;
-}
-
-.pillMuted {
-  background: #f2f4ff;
-  color: #7c809b;
-}
-
-.filterTag {
-  background: #ffffff;
+  background: transparent;
   border: 1px solid #e4e7f2;
   color: #7c809b;
-  padding: 4px 10px;
-  border-radius: 12px;
-  font-weight: 700;
-  font-size: 12px;
+  cursor: pointer;
+
+  &:active {
+    background: #7a8cf1;
+    color: #ffffff;
+    border-color: #7a8cf1;
+  }
+
+  &:hover {
+    outline: none;
+    transform: scale(1.05);
+  
+  }
 }
+
 
 .chartBars {
   display: grid;
@@ -357,7 +401,6 @@
   }
 }
 
-
 .imgUser {
   width: 5%;
   height: 26%;
@@ -365,14 +408,14 @@
   display: block;
 }
 
-.headerActionsMobile{
+.headerActionsMobile {
   display: flex;
   align-items: center;
   gap: 12px;
   justify-content: flex-end;
 }
 
-.notificationButton{
+.notificationButton {
   background: none;
   border: none;
 }
