@@ -28,11 +28,11 @@ export default function WalletPage() {
   return (
     <div className={styles.page}>
       <header className={styles.header}>
-        <div>
+        {/* <div>
           <p className={styles.eyebrow}>Carteiras e cartões</p>
           <h1>Gerencie limites e saldos</h1>
           <p className={styles.subtitle}>Visualize rapidamente o saldo disponível, cartões e atividades recentes.</p>
-        </div>
+        </div> */}
         <div className={styles.headerActions}>
           <button className={styles.secondaryButton} type="button">Exportar PDF</button>
           <button className={styles.primaryButton} type="button">Adicionar carteira</button>
@@ -56,10 +56,11 @@ export default function WalletPage() {
           <header className={styles.cardHeader}>
             <div>
               <p className={styles.cardLabel}>Carteiras</p>
-              <h2>Cartões e contas</h2>
+              <p className={styles.titleCard}>Cartões e contas</p>
             </div>
             <button className={styles.linkButton} type="button">Ver todos</button>
           </header>
+
           <div className={styles.walletList}>
             {wallets.map((wallet) => (
               <div key={wallet.name} className={styles.walletRow}>
@@ -83,14 +84,14 @@ export default function WalletPage() {
           <header className={styles.cardHeader}>
             <div>
               <p className={styles.cardLabel}>Limites</p>
-              <h2>Uso por carteira</h2>
+              <p className={styles.titleCard}>Uso por carteira</p>
             </div>
           </header>
           <div className={styles.limits}>
             {limits.map((limit) => (
               <div key={limit.label} className={styles.limitRow}>
                 <div className={styles.limitTop}>
-                  <span>{limit.label}</span>
+                  <span className={styles.limitLabel}>{limit.label}</span>
                   <span className={styles.muted}>{limit.used}%</span>
                 </div>
                 <div className={styles.limitBar}>
@@ -107,7 +108,7 @@ export default function WalletPage() {
           <header className={styles.cardHeader}>
             <div>
               <p className={styles.cardLabel}>Atividade</p>
-              <h2>Movimentações recentes</h2>
+              <p className={styles.titleCard}>Movimentações recentes</p>
             </div>
             <button className={styles.linkButton} type="button">Ver extrato</button>
           </header>
@@ -134,7 +135,7 @@ export default function WalletPage() {
           </div>
         </article>
 
-        <article className={styles.card}>
+        {/* <article className={styles.card}>
           <header className={styles.cardHeader}>
             <div>
               <p className={styles.cardLabel}>Ações rápidas</p>
@@ -148,7 +149,7 @@ export default function WalletPage() {
             <button className={styles.actionButton} type="button">Trocar cartão virtual</button>
           </div>
           <div className={styles.note}>Dica: configure alertas de gasto para cada carteira.</div>
-        </article>
+        </article> */}
       </section>
     </div>
   );
