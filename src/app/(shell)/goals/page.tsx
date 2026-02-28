@@ -37,11 +37,11 @@ export default function GoalsPage() {
   return (
     <div className={styles.page}>
       <header className={styles.header}>
-        <div>
+        {/* <div>
           <p className={styles.eyebrow}>Metas financeiras</p>
           <h1>Planeje e acompanhe objetivos</h1>
           <p className={styles.subtitle}>Visualize o progresso das metas, defina prioridades e crie novas conquistas.</p>
-        </div>
+        </div> */}
         <div className={styles.headerActions}>
           <button className={styles.secondaryButton} type="button">Exportar PDF</button>
           <button className={styles.primaryButton} type="button">Nova meta</button>

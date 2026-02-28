@@ -72,13 +72,13 @@ export default function TransitionsPage() {
     <div className={styles.page}>
       <main className={styles.shell}>
         <header className={styles.header}>
-          <div>
+          {/* <div>
             <p className={styles.eyebrow}>Fluxo financeiro</p>
             <h1>Transações e movimentações</h1>
             <p className={styles.subtitle}>
               Acompanhe entradas, saídas e pendências em tempo real.
             </p>
-          </div>
+          </div> */}
           <div className={styles.actions}>
             <input className={styles.search} placeholder="Buscar por nome ou categoria" aria-label="Buscar" />
             <button className={styles.secondaryButton} type="button">
